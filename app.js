@@ -1,29 +1,36 @@
 const maxNum = document.getElementById("number");
 const button = document.getElementById("button");
+const span = document.getElementById("span");
+const guessDiv = document.getElementById("guessDiv");
 const guess = document.getElementById("guess");
+const guessButton = document.getElementById("guessButton");
 const p = document.getElementById("p");
+let targetNum = 0;
+let attempts = 0;
 
 button.addEventListener('click', demo);
 
 function demo() {
-    guess.classList.add("show");
-    const targetNum = Math.floor(Math.random() * maxNum.value) + 1;
-    let attempts = 1;
+    guessDiv.classList.add("show");
+    targetNum = Math.floor(Math.random() * maxNum.value) + 1;
+    span.innerText = `Now, a Random number, between 1 & ${maxNum.value} is generated, guess that number`
+}
 
-    while (guess.value !== targetNum) {
-        if (guess.value === 0) break;
-        attempts++;
-        if (guess.value > targetNum) {
-            p.innerText = 'Your guess is Too high!'
-        } else {
-            p.innerText = 'Your guess is Too Low!'
-        }
+guessButton.addEventListener('click', check);
+
+function check() {
+    attempts++;
+    if (guess.value == targetNum) {
+        p.innerHTML = `CONGRATS YOU WON! It took you ${attempts} guesses`;
+        guess.value = '';
+
     }
-
-    if (guess === 0) {
-        p.innerText = "OK, YOU QUIT!";
-    } else {
-        p.innerText = "CONGRATS YOU WIN!";
-        p.innerText = `You got it! It took you ${attempts} guesses`;
+    else if (guess.value > targetNum) {
+        p.innerText = 'Your guess is Too High!';
+        guess.value = '';
+    }
+    else if (guess.value < targetNum) {
+        p.innerText = 'Your guess is Too Low!';
+        guess.value = '';
     }
 }

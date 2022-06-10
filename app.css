@@ -1,4 +1,13 @@
-.guess {
+body {
+    margin: 15em auto;
+    text-align: center;
+}
+
+div {
+    margin: 1em;
+}
+
+.guessDiv {
     display: none;
 }
 
