@@ -13,7 +13,7 @@ button.addEventListener('click', demo);
 function demo() {
     guessDiv.classList.add("show");
     targetNum = Math.floor(Math.random() * maxNum.value) + 1;
-    span.innerText = `Now, a Random number, between 1 & ${maxNum.value} is generated, guess that number`
+    span.innerText = `Now, a Random number between 1 & ${maxNum.value} is generated, guess that number`
 }
 
 guessButton.addEventListener('click', check);
