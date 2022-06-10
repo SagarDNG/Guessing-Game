@@ -1,6 +1,7 @@
 const maxNum = document.getElementById("number");
 const button = document.getElementById("button");
 const span = document.getElementById("span");
+const label = document.querySelectorAll('label')[1];
 const guessDiv = document.getElementById("guessDiv");
 const guess = document.getElementById("guess");
 const guessButton = document.getElementById("guessButton");
@@ -28,9 +29,11 @@ function check() {
     else if (guess.value > targetNum) {
         p.innerText = 'Your guess is Too High!';
         guess.value = '';
+        label.innerText = 'Enter a different Guess';
     }
     else if (guess.value < targetNum) {
         p.innerText = 'Your guess is Too Low!';
         guess.value = '';
+        label.innerText = 'Enter a different Guess';
     }
 }
