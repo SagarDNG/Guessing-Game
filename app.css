@@ -14,3 +14,12 @@ div {
 .show {
     display: block;
 }
+
+#guessButton {
+    /* display: block; */
+    margin: 1em;
+}
+
+footer {
+    margin-top: 5em;
+}

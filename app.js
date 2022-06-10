@@ -12,9 +12,15 @@ let attempts = 0;
 button.addEventListener('click', demo);
 
 function demo() {
-    guessDiv.classList.add("show");
-    targetNum = Math.floor(Math.random() * maxNum.value) + 1;
-    span.innerText = `Now, a Random number between 1 & ${maxNum.value} is generated, guess that number`
+    if (!maxNum.value) {
+        alert("Please enter Some Number");
+    }
+    else {
+        guessDiv.classList.add("show");
+        targetNum = Math.floor(Math.random() * maxNum.value) + 1;
+        span.innerText = `Now, a Random number between 1 & ${maxNum.value} is generated, guess that number`;
+    }
+
 }
 
 guessButton.addEventListener('click', check);
@@ -22,7 +28,7 @@ guessButton.addEventListener('click', check);
 function check() {
     attempts++;
     if (guess.value == targetNum) {
-        p.innerHTML = `CONGRATS YOU WON! It took you ${attempts} guesses`;
+        p.innerHTML = `CONGRATS YOU WON! It took you ${attempts} guesses, the Random Number was ${targetNum}`;
         guess.value = '';
 
     }
