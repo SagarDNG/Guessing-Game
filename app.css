@@ -16,8 +16,22 @@ div {
 }
 
 #guessButton {
-    /* display: block; */
     margin: 1em;
+    padding: .2em .4em;
+}
+
+#button {
+    padding: .2em .4em;
+}
+
+#button:hover {
+    background-color: black;
+    color: white;
+}
+
+#guessButton:hover {
+    background-color: black;
+    color: white;
 }
 
 footer {
